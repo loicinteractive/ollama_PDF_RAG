@@ -4,6 +4,9 @@ Streamlit application for PDF-based Retrieval-Augmented Generation (RAG) using O
 This application allows users to upload a PDF, process it,
 and then ask questions about the content using a selected language model.
 """
+# This script requires Python==3.11.0 instead of 3.13.0 or newer version which would cause a 
+# conflict between requirement unstructured & layoutparcer!
+# macOS need install zx & tesseract & poppler through brew, depends on the error on the Streamlit UI!
 
 import streamlit as st
 import logging
@@ -12,6 +15,10 @@ import tempfile
 import shutil
 import pdfplumber
 import ollama
+import nltk
+nltk.download('punkt_tab')
+nltk.download('averaged_perceptron_tagger_eng')
+
 
 from langchain_community.document_loaders import UnstructuredPDFLoader
 from langchain_ollama import OllamaEmbeddings
