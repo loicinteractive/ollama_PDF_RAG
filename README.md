@@ -117,7 +117,7 @@ This project is open source and available under the MIT License.
 ---
 
 ## ⚠️ Warning
-This repository has made some changes that fits my personal project use, if you want original repository functional, just re-edit streamlit_app.py by adding those changes(Line 49-65) and use requirements.txt in this project instead of the original repository:
+This repository has made some changes that fits my personal project use, if you want original repository functional, just re-edit streamlit_app.py by replacing contents (Line 49-65) below and use requirements.txt in this project instead of the original repository, that should be work.
 ```
 @st.cache_resource(show_spinner=True)
 def extract_model_names(
