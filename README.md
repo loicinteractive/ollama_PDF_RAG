@@ -2,11 +2,6 @@
 
 A powerful local RAG (Retrieval Augmented Generation) application that lets you chat with your PDF documents using Ollama and LangChain. This project includes both a Jupyter notebook for experimentation and a Streamlit web interface for easy interaction.
 
-## 📺 Video Tutorial
-<a href="https://youtu.be/ztBJqzBU5kc">
-  <img src="https://img.youtube.com/vi/ztBJqzBU5kc/hqdefault.jpg" alt="Watch the video" width="100%">
-</a>
-
 ## ✨ Features
 
 - 🔒 Fully local processing - no data leaves your machine
@@ -121,8 +116,26 @@ This project is open source and available under the MIT License.
 
 ---
 
-## ⭐️ Star History
+## ⚠️ Warning
+This repository has made some changes that fits my personal project use, if you want original repository functional, just re-edit streamlit_app.py by adding those changes(Line 49-65) and use requirements.txt in this project instead of the original repository:
+```
+@st.cache_resource(show_spinner=True)
+def extract_model_names(
+    _models_info: Dict[str, List[Dict[str, Any]]],
+) -> Tuple[str, ...]:
+    """
+    Extract model names from the provided models information.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=tonykipkemboi/ollama_pdf_rag&type=Date)](https://star-history.com/#tonykipkemboi/ollama_pdf_rag&Date)
+    Args:
+        models_info (Dict[str, List[Dict[str, Any]]]): Dictionary containing information about available models.
 
-Built with ❤️ by [Tony Kipkemboi](https://x.com/tonykipkemboi)
+    Returns:
+        Tuple[str, ...]: A tuple of model names.
+    """
+    logger.info("Extracting model names from models_info")
+    model_names = tuple(model["model"] for model in _models_info["models"])
+    logger.info(f"Extracted model names: {model_names}")
+    return model_names
+```
+
+Thanks to ❤️ by [Tony Kipkemboi](https://x.com/tonykipkemboi)
