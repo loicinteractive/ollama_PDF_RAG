@@ -66,7 +66,6 @@ Open `updated_rag_notebook.ipynb` to experiment with the code
 Feel free to:
 - Open issues for bugs or suggestions
 - Submit pull requests
-- Comment on the YouTube video for questions
 - Star the repository if you find it useful!
 
 ## ⚠️ Troubleshooting
